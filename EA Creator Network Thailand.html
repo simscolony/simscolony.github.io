@@ -1,0 +1,1478 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>EA Creator Network Thailand</title>
+	
+
+<style>
+/* เพิ่ม CSS สำหรับปุ่มโซเชียลมีเดีย */
+/* Container Styles */
+.social-buttons {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding: 10px;
+}
+
+/* Common Button Styles */
+.social-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.social-btn:hover {
+    transform: translateY(-2px);
+}
+
+.social-btn svg {
+    width: 20px;
+    height: 20px;
+}
+
+/* Individual Button Hover Styles */
+.social-btn.youtube:hover {
+    background: #FF0000;
+    color: white;
+}
+
+.social-btn.twitch:hover {
+    background: #9146FF;
+    color: white;
+}
+
+.social-btn.facebook:hover {
+    background: #1877f2;
+    color: white;
+}
+
+.social-btn.instagram:hover {
+    background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+    color: white;
+}
+
+.social-btn.x-twitter:hover {
+    background: #000000;
+    color: white;
+}
+
+.social-btn.tiktok:hover {
+    background: #000000;
+    color: white;
+}
+
+.social-btn.website:hover {
+    background: #2196F3;
+    color: white;
+}
+
+/* Active States */
+.social-btn:active {
+    transform: translateY(0);
+}
+
+/* Focus States for Accessibility */
+.social-btn:focus {
+    outline: 2px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .social-buttons {
+        gap: 8px;
+    }
+    
+    .social-btn {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .social-btn svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+
+        /* ปรับปรุง card layout */
+        .creator-card {
+            padding: 1.5rem;
+        }
+
+        .buttons-container {
+            display: flex;
+            flex-direction: column;
+            gap: 0.8rem;
+        }
+		
+		/*โครงการ์ด */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        nav {
+            background-color: #f8f9fa;
+            padding: 1rem;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 2rem;
+            position: sticky;
+            top: 0;
+            background: white;
+            z-index: 100;
+        }
+/*เมนู */
+        .nav-menu {
+            display: flex;
+            gap: 2rem;
+            list-style: none;
+            justify-content: flex-start;
+            align-items: center;
+        }
+
+        .nav-menu a {
+            text-decoration: none;
+            color: #333;
+            padding: 0.5rem 1rem;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+
+        h1.section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            color: #333;
+        }
+
+/*จำนวนการ์ด ต่อแถว */
+        .creator-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 2rem;
+            margin-bottom: 3rem;
+        }
+
+        .creator-card {
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            padding: 1rem;
+            border-radius: 12px;
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transition: transform 0.2s ease;
+        }
+
+        .creator-card:hover {
+            transform: translateY(-5px);
+        }
+
+        .creator-name {
+            font-weight: 700;
+            font-size: 1.2rem;
+            color: #333;
+            margin-bottom: 0.5rem;
+        }
+
+        .card-image {
+            width: 100%;
+            height: 200px;
+            background-color: #f0f0f0;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: #666;
+        }
+
+        .detail-btn, .contact-btn {
+            padding: 0.5rem 1rem;
+            border: none;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-align: center;
+            text-decoration: none;
+        }
+
+        .detail-btn {
+            background-color: #e9ecef;
+            color: #333;
+        }
+
+        .contact-btn {
+            background-color: #007bff;
+            color: white;
+        }
+
+        .tags {
+            display: flex;
+            gap: 0.5rem;
+            flex-wrap: wrap;
+        }
+
+        .tag {
+            background-color: #f8f9fa;
+            padding: 0.25rem 0.75rem;
+            border-radius: 15px;
+            font-size: 0.8rem;
+            color: #666;
+        }
+
+        @media (max-width: 900px) {
+            .creator-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (max-width: 600px) {
+            .creator-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+		
+		/* Card Image Container Styles */
+.card-image {
+    position: relative;
+    width: 100%;
+    padding-top: 100%; /* Creates a square aspect ratio */
+    overflow: hidden;
+    border-radius: 8px;
+    margin-bottom: 1rem;
+}
+
+.card-image img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* This ensures images cover the area without distortion */
+    object-position: center;
+}
+
+/* For text placeholders when no image is available */
+.card-image:not(:has(img)) {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #f0f0f0;
+    color: #666;
+    font-size: 1.2rem;
+    padding: 0;
+    min-height: 300px;
+}
+
+/* Creator Card Container */
+.creator-card {
+    background: white;
+    border-radius: 12px;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s ease-in-out;
+    display: flex;
+    flex-direction: column;
+}
+
+.creator-card:hover {
+    transform: translateY(-5px);
+}
+
+/* Creator Grid Layout */
+.creator-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 1rem;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .creator-grid {
+        grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+        gap: 1rem;
+    }
+    
+    .card-image:not(:has(img)) {
+        min-height: 250px;
+    }
+}
+
+@media (max-width: 480px) {
+    .creator-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+/* Bluesky Button Specific Styles */
+.social-btn.bluesky {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #f8f9fa;
+    color: #333;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+
+.social-btn.bluesky:hover {
+    background: #0085FF;
+    color: white;
+    transform: translateY(-2px);
+}
+
+.social-btn.bluesky:active {
+    transform: translateY(0);
+}
+
+.social-btn.bluesky svg {
+    width: 20px;
+    height: 20px;
+    transition: transform 0.3s ease;
+}
+
+/* Subtle hover animation for the butterfly */
+.social-btn.bluesky:hover svg {
+    transform: scale(1.1);
+}
+
+/* Focus State for Accessibility */
+.social-btn.bluesky:focus {
+    outline: 2px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* Focus-visible for modern browsers */
+.social-btn.bluesky:focus-visible {
+    outline: 2px solid #4A90E2;
+    outline-offset: 2px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 480px) {
+    .social-btn.bluesky {
+        width: 36px;
+        height: 36px;
+    }
+    
+    .social-btn.bluesky svg {
+        width: 18px;
+        height: 18px;
+    }
+}
+
+/* Dark Mode Support */
+@media (prefers-color-scheme: dark) {
+    .social-btn.bluesky {
+        background: #2a2a2a;
+        color: #ffffff;
+    }
+    
+    .social-btn.bluesky:hover {
+        background: #0085FF;
+    }
+}
+		
+</style>
+
+</head>
+<body>
+
+
+    <div class="container">
+        <h1 class="section-title">EA Creator Network Thailand 2025</h1>
+        
+        <div class="creator-grid">
+            <!-- name and Detail-->
+			
+<!-- creator 01 Simscolony-->
+            <div class="creator-card">
+                <h2 class="creator-name">SIMSCOLONY</h2>
+                <div class="card-image">
+				<img
+				src="
+				https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/310645458_669357957933775_8189224019023199039_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=Tv9eGxe_fD8Q7kNvgEtmze-&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=AO4WH92JOzZHAtsdrccbuLB&oh=00_AYB8KaRaQWzYjRNmWDoRuoo8-k9s3tyzwKJJnBsM98RmbQ&oe=673FDA1C 
+				"
+				>
+				</div>
+                <a href="#" class="detail-btn">มชนพัฒนาและแปล Mod และของเสริมเกม
+Localization Comunity Thai language Support</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/channel/UC_C--ZH8AaD4auw7jyqaIhg" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/SimsColony" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+
+
+    <!-- X (Twitter) Button -->
+    <a href="https://x.com/simscolony_TH" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+
+
+	<!-- Website bluesky -->
+	<a href="https://bsky.app/profile/simscolony.bsky.social" class="social-btn bluesky" aria-label="Bluesky">
+		<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+        <path d="M11.64 7.72a.77.77 0 0 1 .72 0l4.13 2.36c.24.13.38.37.38.64v3.03c0 .27-.15.51-.38.64l-1.88 1.07v-3.57a.77.77 0 0 0-.38-.64L12 10.14V7.72zM2.5 16.33l4.13-2.36c.24-.13.5-.13.74 0l4.13 2.36c.24.13.38.37.38.64v3.03c0 .27-.15.51-.38.64l-4.13 2.36a.77.77 0 0 1-.74 0l-4.13-2.36a.77.77 0 0 1-.38-.64v-3.03c0-.27.15-.51.38-.64zm14.24 0l4.13-2.36c.24-.13.5-.13.74 0l4.13 2.36c.24.13.38.37.38.64v3.03c0 .27-.15.51-.38.64l-4.13 2.36a.77.77 0 0 1-.74 0l-4.13-2.36a.77.77 0 0 1-.38-.64v-3.03c0-.27.15-.51.38-.64zM7.1 13.57L3 11.21a.77.77 0 0 1-.38-.64V7.54c0-.27.15-.51.38-.64L7.1 4.54c.24-.13.5-.13.74 0l4.13 2.36c.24.13.38.37.38.64v3.03c0 .27-.15.51-.38.64L7.84 13.57a.77.77 0 0 1-.74 0zm9.8 0L12.76 11.21a.77.77 0 0 1-.38-.64V7.54c0-.27.15-.51.38-.64l4.13-2.36c.24-.13.5-.13.74 0l4.13 2.36c.24.13.38.37.38.64v3.03c0 .27-.15.51-.38.64l-4.13 2.36a.77.77 0 0 1-.74 0z"/>
+		</svg>
+	</a>
+	
+	 <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@simscolony" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+	
+	
+    <!-- Website Button -->
+    <a href="http://simscolony.com/" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+	    <!-- Website Button 2 -->
+    <a href="https://linktr.ee/simscolony" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+
+</div>
+
+<!-- creator 01 -->
+                <div class="tags">
+                    <span class="tag">Modding CC and Localization</span>
+                    <span class="tag">The sims 4</span>
+					<span class="tag">The sims 3</span>
+                </div>
+				
+				
+            </div>
+			
+<!-- creator 02 Chalandear-->
+            <div class="creator-card">
+                <h2 class="creator-name">Chalandear </h2>
+                <div class="card-image">
+				<img src="
+				
+https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-1/405374794_373070345113196_3557490670526299953_n.jpg?stp=c0.387.1365.1365a_dst-jpg_s200x200&_nc_cat=107&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=vFkh1-gnnd0Q7kNvgFiJRWs&_nc_zt=24&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=AjWhUx7khxrjoegGSsbOAr8&oh=00_AYC9_t9QXL2H-_lGx9BiOZgT0l7OGo-bkP4Okf_KCAzA2g&oe=673FD1CA
+				">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/channel/UCA_H1wNc1539GaY1xjtO2Fw" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+    <!-- Twitch Button -->
+    <a href="#" class="social-btn twitch" aria-label="Twitch">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/>
+        </svg>
+    </a>
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/Chalandear" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram Button -->
+    <a href="https://www.instagram.com/chalandear/" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- X (Twitter) Button -->
+    <a href="https://x.com/chalandear" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@chalandear" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+
+
+</div>
+
+                <div class="tags">
+                    <span class="tag">The Sims 4</span>
+                    <span class="tag">Game play</span>
+					<span class="tag">Steamer</span>
+                </div>
+            </div>
+
+<!-- creator 17 Mildchoco -->
+            <div class="creator-card">
+                <h2 class="creator-name">Mildchoco</h2>
+                <div class="card-image">								
+				<img src="
+https://scontent.fbkk14-1.fna.fbcdn.net/v/t39.30808-6/351451968_103821282739266_6803702132708652921_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=28t5OZAB2OAQ7kNvgEzB40F&_nc_zt=23&_nc_ht=scontent.fbkk14-1.fna&_nc_gid=APbX2mNRvNLux2yr8bI_JUM&oh=00_AYDUFsWmhJUzyyaesUAPCpTlkWjJ348iGhtLL3LZMuISXQ&oe=673FD176
+">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/channel/UCOdjUkqQ_xuhVG72Uelyf6A?view_as=subscriber" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/MildBrownie" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+ 
+ 
+    <!-- patreon Button -->
+    <a href="https://www.patreon.com/mildchoco" class="social-btn website" aria-label="patreon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+
+
+            </div>
+			
+<!-- creator 03 What the Zuck - Gaming-->
+            <div class="creator-card">
+                <h2 class="creator-name">What the Zuck - Gaming</h2>
+                <div class="card-image">
+<img src="
+				
+https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/464521552_948152470466403_5276750036985691742_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=qOksPlRoxsUQ7kNvgGBvebv&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=A6VAysA9kBM1eFpRcESA-VM&oh=00_AYCVDJpdaBd8D-vs_PyJvcgiBzynJDepLcWQr3JTFBvP3Q&oe=673FBD1E
+
+				">
+				
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@WhattheZuckGaming" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+    <!-- Twitch Button -->
+    <a href="twitch.tv/WTZGaming" class="social-btn twitch" aria-label="Twitch">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M11.571 4.714h1.715v5.143H11.57zm4.715 0H18v5.143h-1.714zM6 0L1.714 4.286v15.428h5.143V24l4.286-4.286h3.428L22.286 12V0zm14.571 11.143l-3.428 3.428h-3.429l-3 3v-3H6.857V1.714h13.714z"/>
+        </svg>
+    </a>
+	
+
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/WTZChannel" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram Button -->
+    <a href="#" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- X (Twitter) Button -->
+    <a href="twitter.com/rainymay13" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@maypj.sims" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+	
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@thesims4.maypj" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- Website Button -->
+    <a href="#" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+
+                <div class="tags">
+                    <span class="tag">The Sims 4</span>
+                    <span class="tag">Game play</span>
+					<span class="tag">Steamer</span>
+                </div>
+            </div>
+
+<!-- creator 04 CCY SIMS-->
+            <div class="creator-card">
+                <h2 class="creator-name">CCY SIMS</h2>
+                <div class="card-image">
+				<img src="
+				https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-1/433245760_335960916118696_4293510151907148653_n.jpg?stp=dst-jpg_s200x200&_nc_cat=109&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=o8SU8YbZs54Q7kNvgHalfyi&_nc_zt=24&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=AmFoX2OY2sJfi0VAnSrQZYQ&oh=00_AYBhStknpndedsLwEwWrYdTv8IkixqMqXMhIGh_fxlpCsw&oe=673FE82A
+				"
+				>
+				
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+			
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@ccy_sims" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/profile.php?id=100091143697268" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+	 <!-- END Button -->
+</div>
+			
+                <div class="tags">
+                    <span class="tag">The Sims 4</span>
+                    <span class="tag">Game play</span>
+                </div>
+            </div>
+			
+<!-- creator 05 Mheemee Sim-->
+            <div class="creator-card">
+                <h2 class="creator-name">Mheemee Sim</h2>
+                <div class="card-image">
+				<img src="
+				https://pbs.twimg.com/profile_images/1566764226584399872/oCsbOiE7_400x400.jpg
+				"
+				>
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@MheemeeSim" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- Instagram Button -->
+    <a href="https://www.instagram.com/mheemeesim/?fbclid=IwZXh0bgNhZW0CMTAAAR0Kyh8nms0okyH6s3Br_Kem-F9HeXZxp-O8jsBEOsX71rd7z0VfGBqqitE_aem_dZudWmY03nqbLOwJtUo2gg" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- X (Twitter) Button -->
+    <a href="https://x.com/mheemeesim" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@mheemeesim?lang=th-TH" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+
+
+</div>
+
+                <div class="tags">
+                    <span class="tag">The Sims 4</span>
+                    <span class="tag">Game play</span>
+                </div>
+            </div>
+
+<!-- creator 06 -Cupcake Sims
+-->
+            <div class="creator-card">
+                <h2 class="creator-name">Cupcake Sims</h2>
+                <div class="card-image">
+				<img src="
+				
+https://pbs.twimg.com/profile_images/1587377074712752130/BnpUnVXP_400x400.jpg
+				">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@cupcakesims" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram Button -->
+    <a href="https://www.instagram.com/cupcakesims.th" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- X (Twitter) Button -->
+    <a href="https://x.com/CupcakeSimsTH/photo" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@cupcakesims8" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+
+	</div>
+
+                
+				
+            </div>
+<!-- creator 07 Oattoboshi -->
+            <div class="creator-card">
+                <h2 class="creator-name">Oattoboshi </h2>
+                <div class="card-image">
+				<img src="
+https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/463286521_510069878515219_3329978009629096859_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=ypVTb3yeY3wQ7kNvgErkfvN&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=AAwFZmp6fhaJuI2DemJuRqD&oh=00_AYAS_kItZ5bZMx4jZfejnwsgCJAgVWqYjV6BLSTNqCxUlg&oe=673FDF66
+				">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/channel/UCDP4JREtAbg23KDt84DgUAQ" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/oattoboshi" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+
+</div>
+
+             
+            </div>
+<!-- creator 08 sulsulrani-->
+            <div class="creator-card">
+                <h2 class="creator-name">sulsulrani</h2>
+                <div class="card-image">
+								<img src="
+https://sulsulrani.carrd.co/assets/images/image04.jpg
+				">
+				
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@sulsulrani" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- X (Twitter) Button -->
+    <a href="https://x.com/sulsulrani" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@Sulsulrani" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- Website Button -->
+    <a href="https://sulsulrani.carrd.co/" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+	    <!-- Website tumblr -->
+    <a href="https://sulsulrani.tumblr.com/" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+		    <!-- Website patreon -->
+    <a href="https://www.patreon.com/SulsulRani" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+
+
+            </div>
+<!-- creator 09 Sakura Si-->
+            <div class="creator-card">
+                <h2 class="creator-name">🌸 Sakura Sims 🌸</h2>
+                <div class="card-image">
+				<img src="
+				
+https://m.openlink.co/images/sakura.sims/profile_1711054451.jpg
+
+				">
+				
+			</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@sakura_sims" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- Instagram Button -->
+    <a href="https://www.instagram.com/_sakurasims_" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@sakura.sims" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- Website Button -->
+    <a href="https://www.openlink.co/sakura.sims" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+	    <!-- tumblr Button -->
+    <a href="https://sakurasims-th.tumblr.com/" class="social-btn website" aria-label="tumblr">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+				
+                <div class="tags">
+                    <span class="tag">Graphics</span>
+                    <span class="tag">Branding</span>
+                </div>
+            </div>
+<!-- creator 10 Kate kate-->
+            <div class="creator-card">
+                <h2 class="creator-name">Kate katee</h2>
+                <div class="card-image">								
+				<img src="
+https://yt3.googleusercontent.com/R5Hp704GZIFZSeqGpifkw33-2cnJogwpSa0kVmYRmSqlEBPaft0S8h8C755q4hEHY6rDtEoRqQ=s160-c-k-c0x00ffffff-no-rj
+				">
+				
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+
+    <a href="https://www.youtube.com/@Kathy_Kate" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+	
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@kathy_simss" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- Website Button -->
+    <a href="#" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+
+				
+                <div class="tags">
+                    <span class="tag">Comics</span>
+                    <span class="tag">Illustration</span>
+                </div>
+            </div>
+<!-- creator 11 seenderellasims-->
+            <div class="creator-card">
+                <h2 class="creator-name">seenderellasims</h2>
+                <div class="card-image">
+								<img src="
+								https://pbs.twimg.com/profile_images/1535651097016082432/FUZjYpU5_400x400.jpg
+
+				">
+				
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@seenderella" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+	
+
+    <!-- X (Twitter) Button -->
+    <a href="https://x.com/seenderella97" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@seenderellasims" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- Website Button -->
+    <a href="#" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+				
+                <div class="tags">
+                    <span class="tag">Fashion</span>
+                    <span class="tag">Design</span>
+                </div>
+            </div>
+<!-- creator 12 the sims club thailand-->
+            <div class="creator-card">
+                <h2 class="creator-name">Ryan Taylor</h2>
+                <div class="card-image">								
+				<img src="
+https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/294897693_386038833515210_5032302925485437359_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=deBcRkEaUIcQ7kNvgFuqzen&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=AuAtCoLRw_ZenWkMw43GJ2Q&oh=00_AYAh9EdToho6jmFzL6a5Jq8TW5wL0eSKED_UZOqNXwPM2A&oe=673FE40B
+				">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@thesimsclubthailand" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/thesimsclubthailand" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@thesimsclub.com" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- Website Button -->
+    <a href="https://thesimsclub.com/" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+				
+
+
+            </div>
+<!-- creator 13 LessSweett-->
+            <div class="creator-card">
+                <h2 class="creator-name">LessSweett</h2>
+                <div class="card-image">
+				<img src="
+
+https://yt3.googleusercontent.com/Xn2B7si6xA9XHBLo-MI4J9Eun8fvMbQuSIgQ23h7XQerCsEEGAnlWifVSscvPwaUtwCOx8mp=s160-c-k-c0x00ffffff-no-rj
+">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@lesssweett" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@lesssweett" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- Website Button -->
+    <a href="#" class="social-btn website" aria-label="Website">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+
+
+
+            </div>
+
+<!-- creator 14 The Super Evos Sims -->
+            <div class="creator-card">
+                <h2 class="creator-name">The Super Evos Sims </h2>
+                <div class="card-image">
+				<img src="
+https://scontent.fbkk14-1.fna.fbcdn.net/v/t39.30808-6/454905651_122157835712144164_2836816644019948035_n.jpg?_nc_cat=111&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=kXoqEcT9zwEQ7kNvgH7YLDt&_nc_zt=23&_nc_ht=scontent.fbkk14-1.fna&_nc_gid=AE2hJtYv34OIgMkKy-qVWpq&oh=00_AYAm_dP_gP1Eqjhs9YIEUuTXE7qCaMOEqFo5A2VpZg6O7w&oe=673FEBA3
+">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/channel/UC14rTyGdAOMx3cqvwbOplQQ" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/thesuperevossims" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+
+    <!-- X (Twitter) Button -->
+    <a href="https://x.com/Superevossims" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="#" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- Website linktr -->
+    <a href="https://linktr.ee/TheEvosBoy" class="social-btn website" aria-label="linktr">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+	    <!-- Website patreon -->
+    <a href="https://www.patreon.com/TheEvosBoy" class="social-btn website" aria-label="patreon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+</div>
+
+
+            </div>
+			
+<!-- creator 15 AmicaKitty エミカーキティ -->
+            <div class="creator-card">
+                <h2 class="creator-name">AmicaKitty エミカーキティ </h2>
+                <div class="card-image">								
+				<img src="
+https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/458713573_511088711826764_994591375792146141_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=HeS44azj0mMQ7kNvgGLqUal&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=Amep6Tcmv9WNoknEAmLJyz4&oh=00_AYDC1Hu3MTnJMwZYWaxKIP6KA9iU1NbU-ikB2zruKlKvwA&oe=673FF411
+				"></div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/@AmicaKitty_CH" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/AmicaKitty.CH" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram Button -->
+    <a href="#" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- X (Twitter) Button -->
+    <a href="#" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@amicakitty_gaming" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+</div>
+
+
+            </div>
+			
+			
+<!-- creator 16 IZANA Channel-->
+            <div class="creator-card">
+                <h2 class="creator-name">IZANA Channel</h2>
+                <div class="card-image">								<img src="
+https://scontent.fbkk14-1.fna.fbcdn.net/v/t39.30808-1/449472086_442644778581733_6475486961181416210_n.jpg?stp=c420.0.1080.1080a_dst-jpg_s200x200&_nc_cat=100&ccb=1-7&_nc_sid=f4b9fd&_nc_ohc=V6e2a-3XqL4Q7kNvgE4CfeU&_nc_zt=24&_nc_ht=scontent.fbkk14-1.fna&_nc_gid=A1Dn8LvSfbUtjcnhPfg4cCx&oh=00_AYDmgD69U5_vOJBuDsqqHbL8fcd7pdA0k3dR_-PQRiSy0w&oe=673FD23B
+">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/c/IZANAChannelXQ01" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/IZANAChannelXQ" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+ 
+ 
+</div>
+
+
+            </div>
+			
+
+		
+<!-- creator 18 cowbuild-->
+            <div class="creator-card">
+                <h2 class="creator-name">cowbuild</h2>
+                <div class="card-image">								
+				<img src="
+
+https://c10.patreonusercontent.com/4/patreon-media/p/campaign/5575119/24acc74c8a7e49d69e46f42e0b0f93f1/eyJ3IjoyMDB9/11.png?token-time=2145916800&token-hash=FyhX5N9iBTLO_VQeGhTi-xUAP4gQIGilrMFu35CSoN4%3D
+">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+
+    <!-- Instagram Button -->
+    <a href="https://www.instagram.com/cowbuild" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+
+    <!-- patreon Button -->
+    <a href="https://www.patreon.com/c/cowbuild/home" class="social-btn website" aria-label="patreon">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+	    <!-- tumblr Button -->
+    <a href="https://cowbuild.tumblr.com/" class="social-btn website" aria-label="tumblr">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+	
+</div>
+
+
+            </div>
+			
+<!-- creator 19 Roger Films Studio-->
+            <div class="creator-card">
+                <h2 class="creator-name">Roger Films Studio</h2>
+                <div class="card-image">								
+				<img src="
+https://scontent.fbkk10-1.fna.fbcdn.net/v/t1.6435-9/61977222_2345436838835616_6906995736311758848_n.png?_nc_cat=101&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=WhbXMbpOL1cQ7kNvgEMLNKZ&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=ALLQ28TgZcVPn62SDH9_z4n&oh=00_AYDWZM5-3uw76gkBYMVrnKQ3D3MEhyAKtYOQHCZrNbcBaA&oe=67617F6F
+">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/channel/UCrO_vcrCl-7eCFHa9tzDT0A" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/RogerFilms" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram Button -->
+    <a href="#" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@rogerfilms" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+
+</div>
+
+
+            </div>
+			
+			
+<!-- creator 20 Txnari in Sims-->
+            <div class="creator-card">
+                <h2 class="creator-name">Txnari in Sims</h2>
+                <div class="card-image">								
+				<img src="
+				https://scontent.fbkk10-1.fna.fbcdn.net/v/t39.30808-6/465576034_577263798155985_1612071697865448060_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=6ee11a&_nc_ohc=2LfIsHHRUuEQ7kNvgHN0PzE&_nc_zt=23&_nc_ht=scontent.fbkk10-1.fna&_nc_gid=AI38esm7CJt1fo9bOiaF7wh&oh=00_AYBzZJmjYEorFP5DPt7-hCY_XxRnkGoM39O9RpVwyjq5Ig&oe=673FEF86
+				">
+				</div>
+                <a href="#" class="detail-btn">Detail</a>
+                <a href="#" class="contact-btn">Contact</a>
+				
+<!-- Social Media Buttons Container -->
+<div class="social-buttons">
+    <!-- YouTube Button -->
+    <a href="https://www.youtube.com/c/Txnariinsims" class="social-btn youtube" aria-label="YouTube">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z"/>
+        </svg>
+    </a>
+
+
+    <!-- Facebook Button -->
+    <a href="https://www.facebook.com/txnari.sims" class="social-btn facebook" aria-label="Facebook">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+        </svg>
+    </a>
+
+    <!-- Instagram Button -->
+    <a href="https://www.instagram.com/txnari.sims/" class="social-btn instagram" aria-label="Instagram">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2.163c3.204 0 3.584.012 4.85.07 3.252.148 4.771 1.691 4.919 4.919.058 1.265.069 1.645.069 4.849 0 3.205-.012 3.584-.069 4.849-.149 3.225-1.664 4.771-4.919 4.919-1.266.058-1.644.07-4.85.07-3.204 0-3.584-.012-4.849-.07-3.26-.149-4.771-1.699-4.919-4.92-.058-1.265-.07-1.644-.07-4.849 0-3.204.013-3.583.07-4.849.149-3.227 1.664-4.771 4.919-4.919 1.266-.057 1.645-.069 4.849-.069zm0-2.163c-3.259 0-3.667.014-4.947.072-4.358.2-6.78 2.618-6.98 6.98-.059 1.281-.073 1.689-.073 4.948 0 3.259.014 3.668.072 4.948.2 4.358 2.618 6.78 6.98 6.98 1.281.058 1.689.072 4.948.072 3.259 0 3.668-.014 4.948-.072 4.354-.2 6.782-2.618 6.979-6.98.059-1.28.073-1.689.073-4.948 0-3.259-.014-3.667-.072-4.947-.196-4.354-2.617-6.78-6.979-6.98-1.281-.059-1.69-.073-4.949-.073zm0 5.838c-3.403 0-6.162 2.759-6.162 6.162s2.759 6.163 6.162 6.163 6.162-2.759 6.162-6.163c0-3.403-2.759-6.162-6.162-6.162zm0 10.162c-2.209 0-4-1.79-4-4 0-2.209 1.791-4 4-4s4 1.791 4 4c0 2.21-1.791 4-4 4zm6.406-11.845c-.796 0-1.441.645-1.441 1.44s.645 1.44 1.441 1.44c.795 0 1.439-.645 1.439-1.44s-.644-1.44-1.439-1.44z"/>
+        </svg>
+    </a>
+
+    <!-- X (Twitter) Button -->
+    <a href="https://x.com/txnarisimss" class="social-btn x-twitter" aria-label="X (Twitter)">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z"/>
+        </svg>
+    </a>
+
+    <!-- TikTok Button -->
+    <a href="https://www.tiktok.com/@txnarisims" class="social-btn tiktok" aria-label="TikTok">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M19.59 6.69a4.83 4.83 0 0 1-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 0 1-5.2 1.74 2.89 2.89 0 0 1 2.31-4.64 2.93 2.93 0 0 1 .88.13V9.4a6.84 6.84 0 0 0-1-.05A6.33 6.33 0 0 0 5 20.1a6.34 6.34 0 0 0 10.86-4.43v-7a8.16 8.16 0 0 0 4.77 1.52v-3.4a4.85 4.85 0 0 1-1.04-.1z"/>
+        </svg>
+    </a>
+
+    <!-- linktr Button -->
+    <a href="https://linktr.ee/txnarisims" class="social-btn website" aria-label="linktr">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+	
+	    <!-- tumblr Button -->
+    <a href="https://www.tumblr.com/txnarisims" class="social-btn website" aria-label="tumblr">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" width="24" height="24" fill="currentColor">
+            <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm-1 17.93c-3.95-.49-7-3.85-7-7.93 0-.62.08-1.21.21-1.79L9 15v1c0 1.1.9 2 2 2v1.93zm6.9-2.54c-.26-.81-1-1.39-1.9-1.39h-1v-3c0-.55-.45-1-1-1H8v-2h2c.55 0 1-.45 1-1V7h2c1.1 0 2-.9 2-2v-.41c2.93 1.19 5 4.06 5 7.41 0 2.08-.8 3.97-2.1 5.39z"/>
+        </svg>
+    </a>
+</div>
+
+
+
+<!-- End card -->	
+        </div>
+    </div>
+</body>
+</html>
